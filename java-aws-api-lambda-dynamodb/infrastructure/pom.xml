@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Versioning -->
+	<artifactId>java-aws-api-lambda-dynamodb-infra</artifactId>
+	<parent>
+		<groupId>gr.codelearn</groupId>
+		<artifactId>java-aws-api-lambda-dynamodb</artifactId>
+		<version>2024.1.0</version>
+	</parent>
+
+	<!-- Meta-data -->
+	<name>[${project.artifactId}]</name>
+	<description>Java AWS module, Api Gateway, Lambda, DynamoDB infrastructure</description>
+	<!-- Properties/Variables -->
+
+	<properties>
+		<aws.java.cdk.version>2.164.1</aws.java.cdk.version>
+		<constructs.version>10.4.2</constructs.version>
+		<exec-maven-plugin.version>3.5.0</exec-maven-plugin.version>
+	</properties>
+
+	<!-- Dependencies -->
+	<dependencies>
+		<dependency>
+			<groupId>software.amazon.awscdk</groupId>
+			<artifactId>aws-cdk-lib</artifactId>
+			<version>${aws.java.cdk.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>software.constructs</groupId>
+			<artifactId>constructs</artifactId>
+			<version>${constructs.version}</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>${exec-maven-plugin.version}</version>
+				<configuration>
+					<mainClass>gr.codelearn.aws.infra.CdkApp</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

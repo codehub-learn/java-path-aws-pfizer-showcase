@@ -1,1 +1,1 @@
-# java-path-aws-pfizer-showcase
+AWS Serverless @Pfizer

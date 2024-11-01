@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Appenders>
+		<Lambda name="Lambda">
+			<PatternLayout>
+				<pattern>%X{AWSRequestId}|%-5p|%15.15t|%-35.35c{1.}|%m%n%ex</pattern>
+			</PatternLayout>
+		</Lambda>
+	</Appenders>
+
+	<Loggers>
+		<Logger name="software.amazon.awssdk" level="WARN"/>
+		<Logger name="software.amazon.awssdk.request" level="DEBUG"/>
+		<Logger name="gr.codelearn" level="TRACE"/>
+
+		<Root level="INFO">
+			<AppenderRef ref="Lambda"/>
+		</Root>
+	</Loggers>
+</Configuration>
